@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		028326CB82936889E8C45BD16C4F5F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9561DE132A142101475B6808EA9DF441 /* LaunchScreen.storyboard */; };
+		11F25848E1062012162881538653AE65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1936DF56C8CB28C34DBF781E9A349E5A /* main.m */; };
+		187F925DE8D0D11AAE506DBF9F1F1EF8 /* DRWebViewController+IBActions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA30FFEB86C37DBF085CC6309799E4ED /* DRWebViewController+IBActions.m */; };
+		1F4703D61DAEBAF9B7993B25EB272E03 /* DRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3419FEB47B5904A544EF1280A01F531C /* DRWebViewController.m */; };
+		37276AD0F934EEB7B769277941FC7B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FEC906CC8F7F9CB56D6FA4045EFCC03 /* Assets.xcassets */; };
+		598BEE3843E68925A65CA3954FE7C061 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63254CC66A8B8E651E057E3347F04C74 /* AppDelegate.m */; };
+		5B502C7B77F3444124A2EC9315C3D85B /* DRWebViewController+CustomDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C605842DC1546322BBF807B4D69CC37C /* DRWebViewController+CustomDelegate.m */; };
+		7B42D7221FA92163CB6D8996B9A3F3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FF38A633C12F94174EFF782654AE44 /* Main.storyboard */; };
+		9BB6DA56CA2D4A84B04E773CBBE6F9CE /* DRBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07FBE6A5BC58C3301574A60E3659CFE /* DRBookmarksViewController.m */; };
+		BB91537BF8E462E610A078F5A848E4D6 /* DRHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E693C00372CF1EED0F6B37C22ACB4A /* DRHistoryViewController.m */; };
+		FC8F37ED00D419F6725EDBDD26BDB4AC /* DRWebViewController+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7671337FCA5854A09183818A27401D94 /* DRWebViewController+KVO.m */; };
+		FFD4D46849176BF2BDFA988C99897B37 /* AVPlayerViewController+GestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787B63BDC66426EE32AE6DAFCF92747 /* AVPlayerViewController+GestureRecognizer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F96743E0D50C946B4393BC1A5FA936D /* DRWebViewController+IBActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRWebViewController+IBActions.h"; sourceTree = "<group>"; };
+		1936DF56C8CB28C34DBF781E9A349E5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20CA7F6C4F770DE9D489C2E44FB647BB /* DRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRWebViewController.h; sourceTree = "<group>"; };
+		29320EFA3B35F66DC1764961BC507ADD /* DRBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBookmarksViewController.h; sourceTree = "<group>"; };
+		3419FEB47B5904A544EF1280A01F531C /* DRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRWebViewController.m; sourceTree = "<group>"; };
+		4787B63BDC66426EE32AE6DAFCF92747 /* AVPlayerViewController+GestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVPlayerViewController+GestureRecognizer.m"; sourceTree = "<group>"; };
+		63254CC66A8B8E651E057E3347F04C74 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6DB40F9A78DDFF0E3507182FAC66B858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FEC906CC8F7F9CB56D6FA4045EFCC03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drama/Assets.xcassets; sourceTree = "<group>"; };
+		7671337FCA5854A09183818A27401D94 /* DRWebViewController+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+KVO.m"; sourceTree = "<group>"; };
+		B527D0701BD99FF20268028457C87182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF4DED8674E0090E4CE6C37B0513B354 /* AVPlayerViewController+GestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVPlayerViewController+GestureRecognizer.h"; sourceTree = "<group>"; };
+		C04248C97994A84E5A890450620AA8DC /* DRWebViewController+CustomDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRWebViewController+CustomDelegate.h"; sourceTree = "<group>"; };
+		C5FFE37AB71358F84D1718AFF9DB2C89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C605842DC1546322BBF807B4D69CC37C /* DRWebViewController+CustomDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+CustomDelegate.m"; sourceTree = "<group>"; };
+		D1EDC0FA725A260228D85E4BE80DF325 /* DRHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHistoryViewController.h; sourceTree = "<group>"; };
+		DA30FFEB86C37DBF085CC6309799E4ED /* DRWebViewController+IBActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+IBActions.m"; sourceTree = "<group>"; };
+		E07FBE6A5BC58C3301574A60E3659CFE /* DRBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBookmarksViewController.m; sourceTree = "<group>"; };
+		E8E693C00372CF1EED0F6B37C22ACB4A /* DRHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHistoryViewController.m; sourceTree = "<group>"; };
+		E9EBCFECD6B4EDE0800E973D53DD7714 /* Drama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDD03D182C70898F94229076DEC7AE1D /* DRWebViewController+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRWebViewController+KVO.h"; sourceTree = "<group>"; };
+		F1FF38A633C12F94174EFF782654AE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD249E13A7F6A0C0A2E7DFA4ED3008E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D0360DB0AFCA1D250C25DE556DDCCFD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				29320EFA3B35F66DC1764961BC507ADD /* DRBookmarksViewController.h */,
+				E07FBE6A5BC58C3301574A60E3659CFE /* DRBookmarksViewController.m */,
+				D1EDC0FA725A260228D85E4BE80DF325 /* DRHistoryViewController.h */,
+				E8E693C00372CF1EED0F6B37C22ACB4A /* DRHistoryViewController.m */,
+				20CA7F6C4F770DE9D489C2E44FB647BB /* DRWebViewController.h */,
+				3419FEB47B5904A544EF1280A01F531C /* DRWebViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		578EE8073628F17651A1E22D81E5818B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C5FFE37AB71358F84D1718AFF9DB2C89 /* AppDelegate.h */,
+				63254CC66A8B8E651E057E3347F04C74 /* AppDelegate.m */,
+				9561DE132A142101475B6808EA9DF441 /* LaunchScreen.storyboard */,
+				F1FF38A633C12F94174EFF782654AE44 /* Main.storyboard */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		6618347396E3204156D6E1A1C7D6C05F /* Drama */ = {
+			isa = PBXGroup;
+			children = (
+				578EE8073628F17651A1E22D81E5818B /* App */,
+				735EC5955AC41081FCD8C6D0246D93F9 /* Category */,
+				0D0360DB0AFCA1D250C25DE556DDCCFD /* ViewControllers */,
+			);
+			path = Drama;
+			sourceTree = "<group>";
+		};
+		735EC5955AC41081FCD8C6D0246D93F9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BF4DED8674E0090E4CE6C37B0513B354 /* AVPlayerViewController+GestureRecognizer.h */,
+				4787B63BDC66426EE32AE6DAFCF92747 /* AVPlayerViewController+GestureRecognizer.m */,
+				C04248C97994A84E5A890450620AA8DC /* DRWebViewController+CustomDelegate.h */,
+				C605842DC1546322BBF807B4D69CC37C /* DRWebViewController+CustomDelegate.m */,
+				0F96743E0D50C946B4393BC1A5FA936D /* DRWebViewController+IBActions.h */,
+				DA30FFEB86C37DBF085CC6309799E4ED /* DRWebViewController+IBActions.m */,
+				EDD03D182C70898F94229076DEC7AE1D /* DRWebViewController+KVO.h */,
+				7671337FCA5854A09183818A27401D94 /* DRWebViewController+KVO.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		7F46CE7F28253B5567CB5DAD1226712A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9EBCFECD6B4EDE0800E973D53DD7714 /* Drama.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE2AB75B593988F4E746B854F8A96C82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B527D0701BD99FF20268028457C87182 /* Info.plist */,
+				1936DF56C8CB28C34DBF781E9A349E5A /* main.m */,
+			);
+			name = "Supporting Files";
+			path = Drama;
+			sourceTree = "<group>";
+		};
+		E0C1906B0C50606645474359727DFA34 = {
+			isa = PBXGroup;
+			children = (
+				6618347396E3204156D6E1A1C7D6C05F /* Drama */,
+				7F46CE7F28253B5567CB5DAD1226712A /* Products */,
+				DE2AB75B593988F4E746B854F8A96C82 /* Supporting Files */,
+				6FEC906CC8F7F9CB56D6FA4045EFCC03 /* Assets.xcassets */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4C49C68AFDF2B0D22A04528A1C42C82 /* Drama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C676C80390F3FD1636CD95FD50F11BFE /* Build configuration list for PBXNativeTarget "Drama" */;
+			buildPhases = (
+				98DEF1DACD83D2F3751A17020069C419 /* Sources */,
+				BD249E13A7F6A0C0A2E7DFA4ED3008E5 /* Frameworks */,
+				6584FD5824B4FBD2F40687AE03920CBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Drama;
+			productName = Drama;
+			productReference = E9EBCFECD6B4EDE0800E973D53DD7714 /* Drama.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3892A13BF3B90944EB932504EFF28DE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Shinren Pan";
+				TargetAttributes = {
+					B4C49C68AFDF2B0D22A04528A1C42C82 = {
+						CreatedOnToolsVersion = 7.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = F58B323F663A66963567905D616014A0 /* Build configuration list for PBXProject "Drama" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0C1906B0C50606645474359727DFA34;
+			productRefGroup = 7F46CE7F28253B5567CB5DAD1226712A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4C49C68AFDF2B0D22A04528A1C42C82 /* Drama */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6584FD5824B4FBD2F40687AE03920CBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37276AD0F934EEB7B769277941FC7B7F /* Assets.xcassets in Resources */,
+				028326CB82936889E8C45BD16C4F5F36 /* LaunchScreen.storyboard in Resources */,
+				7B42D7221FA92163CB6D8996B9A3F3CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98DEF1DACD83D2F3751A17020069C419 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD4D46849176BF2BDFA988C99897B37 /* AVPlayerViewController+GestureRecognizer.m in Sources */,
+				598BEE3843E68925A65CA3954FE7C061 /* AppDelegate.m in Sources */,
+				9BB6DA56CA2D4A84B04E773CBBE6F9CE /* DRBookmarksViewController.m in Sources */,
+				BB91537BF8E462E610A078F5A848E4D6 /* DRHistoryViewController.m in Sources */,
+				5B502C7B77F3444124A2EC9315C3D85B /* DRWebViewController+CustomDelegate.m in Sources */,
+				187F925DE8D0D11AAE506DBF9F1F1EF8 /* DRWebViewController+IBActions.m in Sources */,
+				FC8F37ED00D419F6725EDBDD26BDB4AC /* DRWebViewController+KVO.m in Sources */,
+				1F4703D61DAEBAF9B7993B25EB272E03 /* DRWebViewController.m in Sources */,
+				11F25848E1062012162881538653AE65 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9561DE132A142101475B6808EA9DF441 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DB40F9A78DDFF0E3507182FAC66B858 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		888C49DBDD6AEA3ADCE306AD38F550B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Drama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinrenpan.Drama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4F0104ED1E99FF7F0B4DE0EAD417BE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Drama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinrenpan.Drama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E7A72FBB632BE025CD8DA4AC6E138FE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED948D0D561907B1B8F65647B76198E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C676C80390F3FD1636CD95FD50F11BFE /* Build configuration list for PBXNativeTarget "Drama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F0104ED1E99FF7F0B4DE0EAD417BE0 /* Debug */,
+				888C49DBDD6AEA3ADCE306AD38F550B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58B323F663A66963567905D616014A0 /* Build configuration list for PBXProject "Drama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7A72FBB632BE025CD8DA4AC6E138FE2 /* Debug */,
+				ED948D0D561907B1B8F65647B76198E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3892A13BF3B90944EB932504EFF28DE2 /* Project object */;
+}
