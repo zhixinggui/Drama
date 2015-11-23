@@ -12,32 +12,40 @@
 		187F925DE8D0D11AAE506DBF9F1F1EF8 /* DRWebViewController+IBActions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA30FFEB86C37DBF085CC6309799E4ED /* DRWebViewController+IBActions.m */; };
 		1F4703D61DAEBAF9B7993B25EB272E03 /* DRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3419FEB47B5904A544EF1280A01F531C /* DRWebViewController.m */; };
 		37276AD0F934EEB7B769277941FC7B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FEC906CC8F7F9CB56D6FA4045EFCC03 /* Assets.xcassets */; };
+		3E59A496BFF102B22BF428CA6022EA0A /* UIViewController+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE1AACFF42127BDE2ED3860D40C912 /* UIViewController+Rotation.m */; };
+		565CE2F13B5062E93F2E4DF307D485CA /* DRWebViewController+WKNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89626DE434BCB66CBD03EF64D66F8222 /* DRWebViewController+WKNavigationDelegate.m */; };
 		598BEE3843E68925A65CA3954FE7C061 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63254CC66A8B8E651E057E3347F04C74 /* AppDelegate.m */; };
 		5B502C7B77F3444124A2EC9315C3D85B /* DRWebViewController+CustomDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C605842DC1546322BBF807B4D69CC37C /* DRWebViewController+CustomDelegate.m */; };
 		7B42D7221FA92163CB6D8996B9A3F3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FF38A633C12F94174EFF782654AE44 /* Main.storyboard */; };
 		9BB6DA56CA2D4A84B04E773CBBE6F9CE /* DRBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07FBE6A5BC58C3301574A60E3659CFE /* DRBookmarksViewController.m */; };
+		B7DB184458F1D3BF391A91371AD07D36 /* HistoryCheck.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F6DEEF1CA9036891A481E882459DA3B /* HistoryCheck.js */; };
 		BB91537BF8E462E610A078F5A848E4D6 /* DRHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E693C00372CF1EED0F6B37C22ACB4A /* DRHistoryViewController.m */; };
 		FC8F37ED00D419F6725EDBDD26BDB4AC /* DRWebViewController+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7671337FCA5854A09183818A27401D94 /* DRWebViewController+KVO.m */; };
 		FFD4D46849176BF2BDFA988C99897B37 /* AVPlayerViewController+GestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4787B63BDC66426EE32AE6DAFCF92747 /* AVPlayerViewController+GestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ABE1AACFF42127BDE2ED3860D40C912 /* UIViewController+Rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Rotation.m"; sourceTree = "<group>"; };
 		0F96743E0D50C946B4393BC1A5FA936D /* DRWebViewController+IBActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRWebViewController+IBActions.h"; sourceTree = "<group>"; };
 		1936DF56C8CB28C34DBF781E9A349E5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		20CA7F6C4F770DE9D489C2E44FB647BB /* DRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRWebViewController.h; sourceTree = "<group>"; };
 		29320EFA3B35F66DC1764961BC507ADD /* DRBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRBookmarksViewController.h; sourceTree = "<group>"; };
 		3419FEB47B5904A544EF1280A01F531C /* DRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRWebViewController.m; sourceTree = "<group>"; };
+		43F9838F07F08926D3F788DB51EECA5D /* UIViewController+Rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Rotation.h"; sourceTree = "<group>"; };
 		4787B63BDC66426EE32AE6DAFCF92747 /* AVPlayerViewController+GestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVPlayerViewController+GestureRecognizer.m"; sourceTree = "<group>"; };
+		4F6DEEF1CA9036891A481E882459DA3B /* HistoryCheck.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = HistoryCheck.js; sourceTree = "<group>"; };
 		63254CC66A8B8E651E057E3347F04C74 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6DB40F9A78DDFF0E3507182FAC66B858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FEC906CC8F7F9CB56D6FA4045EFCC03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Drama/Assets.xcassets; sourceTree = "<group>"; };
 		7671337FCA5854A09183818A27401D94 /* DRWebViewController+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+KVO.m"; sourceTree = "<group>"; };
+		89626DE434BCB66CBD03EF64D66F8222 /* DRWebViewController+WKNavigationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+WKNavigationDelegate.m"; sourceTree = "<group>"; };
 		B527D0701BD99FF20268028457C87182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4DED8674E0090E4CE6C37B0513B354 /* AVPlayerViewController+GestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVPlayerViewController+GestureRecognizer.h"; sourceTree = "<group>"; };
 		C04248C97994A84E5A890450620AA8DC /* DRWebViewController+CustomDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRWebViewController+CustomDelegate.h"; sourceTree = "<group>"; };
 		C5FFE37AB71358F84D1718AFF9DB2C89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C605842DC1546322BBF807B4D69CC37C /* DRWebViewController+CustomDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+CustomDelegate.m"; sourceTree = "<group>"; };
 		D1EDC0FA725A260228D85E4BE80DF325 /* DRHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHistoryViewController.h; sourceTree = "<group>"; };
+		DA21878FDBA99A4228F11C1A81341033 /* DRWebViewController+WKNavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRWebViewController+WKNavigationDelegate.h"; sourceTree = "<group>"; };
 		DA30FFEB86C37DBF085CC6309799E4ED /* DRWebViewController+IBActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRWebViewController+IBActions.m"; sourceTree = "<group>"; };
 		E07FBE6A5BC58C3301574A60E3659CFE /* DRBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRBookmarksViewController.m; sourceTree = "<group>"; };
 		E8E693C00372CF1EED0F6B37C22ACB4A /* DRHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHistoryViewController.m; sourceTree = "<group>"; };
@@ -102,6 +110,10 @@
 				DA30FFEB86C37DBF085CC6309799E4ED /* DRWebViewController+IBActions.m */,
 				EDD03D182C70898F94229076DEC7AE1D /* DRWebViewController+KVO.h */,
 				7671337FCA5854A09183818A27401D94 /* DRWebViewController+KVO.m */,
+				DA21878FDBA99A4228F11C1A81341033 /* DRWebViewController+WKNavigationDelegate.h */,
+				89626DE434BCB66CBD03EF64D66F8222 /* DRWebViewController+WKNavigationDelegate.m */,
+				43F9838F07F08926D3F788DB51EECA5D /* UIViewController+Rotation.h */,
+				0ABE1AACFF42127BDE2ED3860D40C912 /* UIViewController+Rotation.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -117,6 +129,7 @@
 		DE2AB75B593988F4E746B854F8A96C82 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F6DEEF1CA9036891A481E882459DA3B /* HistoryCheck.js */,
 				B527D0701BD99FF20268028457C87182 /* Info.plist */,
 				1936DF56C8CB28C34DBF781E9A349E5A /* main.m */,
 			);
@@ -197,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37276AD0F934EEB7B769277941FC7B7F /* Assets.xcassets in Resources */,
+				B7DB184458F1D3BF391A91371AD07D36 /* HistoryCheck.js in Resources */,
 				028326CB82936889E8C45BD16C4F5F36 /* LaunchScreen.storyboard in Resources */,
 				7B42D7221FA92163CB6D8996B9A3F3CF /* Main.storyboard in Resources */,
 			);
@@ -216,7 +230,9 @@
 				5B502C7B77F3444124A2EC9315C3D85B /* DRWebViewController+CustomDelegate.m in Sources */,
 				187F925DE8D0D11AAE506DBF9F1F1EF8 /* DRWebViewController+IBActions.m in Sources */,
 				FC8F37ED00D419F6725EDBDD26BDB4AC /* DRWebViewController+KVO.m in Sources */,
+				565CE2F13B5062E93F2E4DF307D485CA /* DRWebViewController+WKNavigationDelegate.m in Sources */,
 				1F4703D61DAEBAF9B7993B25EB272E03 /* DRWebViewController.m in Sources */,
+				3E59A496BFF102B22BF428CA6022EA0A /* UIViewController+Rotation.m in Sources */,
 				11F25848E1062012162881538653AE65 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
