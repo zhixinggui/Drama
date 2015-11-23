@@ -6,6 +6,8 @@
 #import <objc/runtime.h>
 #import "AVPlayerViewController+GestureRecognizer.h"
 
+NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_viewDidLoad";
+
 
 @implementation AVPlayerViewController (GestureRecognizer)
 
@@ -46,6 +48,9 @@
 {
     [self swizzling_viewDidLoad];
     [self __addSwipeGestureRecognizer];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:AVPlayerViewControllerViewDidLoadNotification object:nil];
 }
 
 #pragma mark - Private

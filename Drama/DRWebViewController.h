@@ -11,6 +11,11 @@
  */
 extern NSString * const HomeWebSite;
 
+/**
+ *  Notification for watch history delete.
+ */
+extern NSString * const WatchHistoryDeleteNotification;
+
 
 /**
  *  Web Controller.
@@ -41,5 +46,10 @@ extern NSString * const HomeWebSite;
  *  Web View.
  */
 @property (nonatomic, strong) WKWebView *webView;
+
+/**
+ *  已經看過的影片歷史.
+ */
+@property (nonatomic, strong) NSMutableArray *watchHistory;
 
 @end

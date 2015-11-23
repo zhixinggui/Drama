@@ -7,8 +7,11 @@
 #import "DRWebViewController.h"
 #import "DRWebViewController+KVO.h"
 #import "DRWebViewController+CustomDelegate.h"
+#import "DRWebViewController+WKNavigationDelegate.h"
+#import "AVPlayerViewController+GestureRecognizer.h"
 
 NSString * const HomeWebSite = @"http://8drama.com";
+NSString * const WatchHistoryDeleteNotification = @"watchHistory_delete";
 
 
 @implementation DRWebViewController
@@ -17,6 +20,7 @@ NSString * const HomeWebSite = @"http://8drama.com";
 - (void)dealloc
 {
     [self kvo_remove];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)viewDidLoad
@@ -55,13 +59,30 @@ NSString * const HomeWebSite = @"http://8drama.com";
 #pragma mark - Private
 - (void)__setup
 {
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(__playerViewDidLoadNotification:)
+                                                name:AVPlayerViewControllerViewDidLoadNotification
+                                              object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(__watchHistoryDeleteNotification:)
+                                                name:WatchHistoryDeleteNotification
+                                              object:nil];
+    
+    NSArray *temp = [[NSUserDefaults standardUserDefaults]arrayForKey:@"watchHistory"];
+    _watchHistory = [temp mutableCopy];
+    
+    if(!_watchHistory) {
+        _watchHistory = [NSMutableArray array];
+    }
+    
     _backButton.enabled    = NO;
     _forwardButton.enabled = NO;
 
     _webView = ({
         WKWebView *temp = [[WKWebView alloc]init];
         temp.allowsBackForwardNavigationGestures = YES;
-        
+        temp.navigationDelegate = self;
         [temp setTranslatesAutoresizingMaskIntoConstraints:NO];
         temp;
     });
@@ -81,6 +102,22 @@ NSString * const HomeWebSite = @"http://8drama.com";
     
     [NSLayoutConstraint activateConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:h options:0 metrics:nil views:views]];
+}
+
+- (void)__playerViewDidLoadNotification:(NSNotification *)sender
+{
+    NSString *watchURLString = _webView.URL.absoluteString;
+    
+    if(![_watchHistory containsObject:watchURLString]) {
+        [_watchHistory addObject:watchURLString];
+        [[NSUserDefaults standardUserDefaults]setObject:_watchHistory forKey:@"watchHistory"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
+}
+
+- (void)__watchHistoryDeleteNotification:(NSNotification *)sender
+{
+    [_watchHistory removeAllObjects];
 }
 
 @end
