@@ -162,10 +162,7 @@
 {
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"watchHistory"];
     [[NSUserDefaults standardUserDefaults]synchronize];
-    
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:WatchHistoryDeleteNotification
-     object:nil];
+    [self.watchHistory removeAllObjects];
 }
 
 @end

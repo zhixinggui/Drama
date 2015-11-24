@@ -63,12 +63,7 @@ NSString * const WatchHistoryDeleteNotification = @"watchHistory_delete";
                                             selector:@selector(__playerViewDidLoadNotification:)
                                                 name:AVPlayerViewControllerViewDidLoadNotification
                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self
-                                            selector:@selector(__watchHistoryDeleteNotification:)
-                                                name:WatchHistoryDeleteNotification
-                                              object:nil];
-    
+        
     NSArray *temp = [[NSUserDefaults standardUserDefaults]arrayForKey:@"watchHistory"];
     _watchHistory = [temp mutableCopy];
     
@@ -113,11 +108,6 @@ NSString * const WatchHistoryDeleteNotification = @"watchHistory_delete";
         [[NSUserDefaults standardUserDefaults]setObject:_watchHistory forKey:@"watchHistory"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
-}
-
-- (void)__watchHistoryDeleteNotification:(NSNotification *)sender
-{
-    [_watchHistory removeAllObjects];
 }
 
 @end

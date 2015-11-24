@@ -11,11 +11,6 @@
  */
 extern NSString * const HomeWebSite;
 
-/**
- *  Notification for watch history delete.
- */
-extern NSString * const WatchHistoryDeleteNotification;
-
 
 /**
  *  Web Controller.
