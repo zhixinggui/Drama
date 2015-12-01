@@ -27,6 +27,7 @@ NSString * const WatchHistoryDeleteNotification = @"watchHistory_delete";
 {
     [super viewDidLoad];
     [self __setup];
+    [self __setupUI];
     [self kvo_setup];
 }
 
@@ -34,7 +35,8 @@ NSString * const WatchHistoryDeleteNotification = @"watchHistory_delete";
 {
     [super viewDidAppear:animated];
     
-    if(!_webView.URL) {
+    if(!_webView.URL)
+    {
         NSURL *home = [NSURL URLWithString:HomeWebSite];
         
         [_webView loadRequest:[NSURLRequest requestWithURL:home]];
@@ -43,37 +45,47 @@ NSString * const WatchHistoryDeleteNotification = @"watchHistory_delete";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"toDRHistoryViewController"]) {
+    if([segue.identifier isEqualToString:@"toDRHistoryViewController"])
+    {
         UINavigationController *nav  = segue.destinationViewController;
         DRHistoryViewController *mvc = (DRHistoryViewController *)nav.topViewController;
         mvc.dataSource = sender;
         mvc.delegate   = self;
     }
-    else if([segue.identifier isEqualToString:@"toDRBookmarksViewController"]) {
+    else if([segue.identifier isEqualToString:@"toDRBookmarksViewController"])
+    {
         UINavigationController *nav    = segue.destinationViewController;
         DRBookmarksViewController *mvc = (DRBookmarksViewController *)nav.topViewController;
-        mvc.delegate = self;
+        mvc.bookmarks = _bookmarks;
+        mvc.delegate  = self;
     }
 }
 
 #pragma mark - Private
 - (void)__setup
 {
+    NSArray *tempHistory   = [[NSUserDefaults standardUserDefaults]arrayForKey:@"watchHistory"];
+    _watchHistory          = tempHistory ? [tempHistory mutableCopy] : [@[] mutableCopy];
+
+    NSArray *tempBookmarks = [[NSUserDefaults standardUserDefaults]objectForKey:@"bookmarks"];
+    _bookmarks             = tempBookmarks ? [tempBookmarks mutableCopy] : [@[] mutableCopy];
+    
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"LinksHighlight" ofType:@"js"];
+    _linksHighlight    = [NSString stringWithContentsOfFile:filePath
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+    
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(__playerViewDidLoadNotification:)
                                                 name:AVPlayerViewControllerViewDidLoadNotification
                                               object:nil];
-        
-    NSArray *temp = [[NSUserDefaults standardUserDefaults]arrayForKey:@"watchHistory"];
-    _watchHistory = [temp mutableCopy];
-    
-    if(!_watchHistory) {
-        _watchHistory = [NSMutableArray array];
-    }
-    
+}
+
+- (void)__setupUI
+{
     _backButton.enabled    = NO;
     _forwardButton.enabled = NO;
-
+    
     _webView = ({
         WKWebView *temp = [[WKWebView alloc]init];
         temp.allowsBackForwardNavigationGestures = YES;

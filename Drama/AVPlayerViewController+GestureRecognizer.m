@@ -3,50 +3,17 @@
 // Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/11/21.
 // Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
-#import <objc/runtime.h>
 #import "AVPlayerViewController+GestureRecognizer.h"
 
-NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_viewDidLoad";
+NSString * const AVPlayerViewControllerViewDidLoadNotification = @"player_viewDidLoad";
 
 
 @implementation AVPlayerViewController (GestureRecognizer)
 
 #pragma mark - LifeCycle
-+ (void)load
+- (void)viewDidLoad
 {
-    // Method swizzling
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        
-        SEL originalSelector = @selector(viewDidLoad);
-        SEL swizzledSelector = @selector(swizzling_viewDidLoad);
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        BOOL didAddMethod =
-        class_addMethod(class,
-                        originalSelector,
-                        method_getImplementation(swizzledMethod),
-                        method_getTypeEncoding(swizzledMethod));
-        
-        if (didAddMethod) {
-            class_replaceMethod(class,
-                                swizzledSelector,
-                                method_getImplementation(originalMethod),
-                                method_getTypeEncoding(originalMethod));
-        }
-        else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
-    });
-}
-
-- (void)swizzling_viewDidLoad
-{
-    [self swizzling_viewDidLoad];
+    [super viewDidLoad];
     [self __addSwipeGestureRecognizer];
     
     [[NSNotificationCenter defaultCenter]
@@ -59,7 +26,8 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
     // 將左滑右滑手勢加到 containerView.
     // 因為內建的手勢都加到 containerView, 所以順勢將左滑右滑手勢加入.
     
-    @try {
+    @try
+    {
         UIView *containerView = [self valueForKey:@"containerView"];
         
         UISwipeGestureRecognizer *swipeLeft =
@@ -74,7 +42,8 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
         [containerView addGestureRecognizer:swipeLeft];
         [containerView addGestureRecognizer:swipeRight];
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception)
+    {
         NSLog(@"%@", exception);
     }
 }
@@ -83,7 +52,8 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
 {
     // 左滑手勢 Handle, 後退 10 秒.
     
-    @try {
+    @try
+    {
         NSInvocation *invocation = ({
             id playerController          = [self valueForKey:@"playerController"];
             SEL seekToTime               = NSSelectorFromString(@"seekToTime:");
@@ -100,7 +70,8 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
         [invocation setArgument:&back10Seconds atIndex:2];
         [invocation invoke];
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception)
+    {
         NSLog(@"%@", exception);
     }
 }
@@ -109,7 +80,8 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
 {
     // 右滑手勢 Handle, 前進 10 秒.
     
-    @try {
+    @try
+    {
         NSInvocation *invocation = ({
             id playerController          = [self valueForKey:@"playerController"];
             SEL seekToTime               = NSSelectorFromString(@"seekToTime:");
@@ -126,7 +98,8 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
         [invocation setArgument:&forward10Seconds atIndex:2];
         [invocation invoke];
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception)
+    {
         NSLog(@"%@", exception);
     }
 }
@@ -138,17 +111,20 @@ NSString * const AVPlayerViewControllerViewDidLoadNotification = @"swizzling_vie
     
     NSInteger currentTimeInSeconds = 0;
     
-    @try {
+    @try
+    {
         id controller             = [self valueForKey:@"playbackControlsViewController"];
         UILabel *currentTimeLabel = [controller valueForKey:@"elapsedTimeLabel"];
         NSString *timeString      = currentTimeLabel.text;
         NSArray *times            = [timeString componentsSeparatedByString:@":"];
         
-        for (int i = 0; i != times.count; i++) {
+        for (int i = 0; i != times.count; i++)
+        {
             currentTimeInSeconds = 60 * currentTimeInSeconds + [times[i]integerValue];
         }
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception)
+    {
         NSLog(@"%@", exception);
     }
     

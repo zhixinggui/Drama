@@ -47,4 +47,14 @@ extern NSString * const HomeWebSite;
  */
 @property (nonatomic, strong) NSMutableArray *watchHistory;
 
+/**
+ *  書籤列表.
+ */
+@property (nonatomic, strong) NSMutableArray *bookmarks;
+
+/**
+ *  Highlight Links JavaScript.
+ */
+@property (nonatomic, strong) NSString *linksHighlight;
+
 @end

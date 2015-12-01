@@ -12,25 +12,31 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary *)change context:(void *)context
 {
-    if([keyPath isEqualToString:@"loading"]) {
+    if([keyPath isEqualToString:@"loading"])
+    {
         BOOL loading = [change[NSKeyValueChangeNewKey]boolValue];
         
-        if(loading) {
+        if(loading)
+        {
             self.title = @"Loading...";
             self.progressView.hidden = NO;
         }
-        else {
+        else
+        {
             self.title = self.webView.title;
             self.progressView.hidden = YES;
         }
     }
-    else if([keyPath isEqualToString:@"estimatedProgress"]) {
+    else if([keyPath isEqualToString:@"estimatedProgress"])
+    {
         self.progressView.progress = [change[NSKeyValueChangeNewKey]floatValue];
     }
-    else if([keyPath isEqualToString:@"canGoBack"]) {
+    else if([keyPath isEqualToString:@"canGoBack"])
+    {
         self.backButton.enabled = [change[NSKeyValueChangeNewKey]boolValue];
     }
-    else if([keyPath isEqualToString:@"canGoForward"]) {
+    else if([keyPath isEqualToString:@"canGoForward"])
+    {
         self.forwardButton.enabled = [change[NSKeyValueChangeNewKey]boolValue];
     }
 }

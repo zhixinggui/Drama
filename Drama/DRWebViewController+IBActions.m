@@ -23,7 +23,8 @@
 #pragma mark - BackButton long press
 - (IBAction)backButtonLongPressed:(UILongPressGestureRecognizer *)sender
 {
-    if(sender.state == UIGestureRecognizerStateBegan) {
+    if(sender.state == UIGestureRecognizerStateBegan)
+    {
         NSArray *history = self.webView.backForwardList.backList;
         
         [self performSegueWithIdentifier:@"toDRHistoryViewController" sender:history];
@@ -39,7 +40,8 @@
 #pragma mark - ForwardButton long press
 - (IBAction)forwardButtonLongPressed:(UILongPressGestureRecognizer *)sender
 {
-    if(sender.state == UIGestureRecognizerStateBegan) {
+    if(sender.state == UIGestureRecognizerStateBegan)
+    {
         NSArray *history = self.webView.backForwardList.forwardList;
         
         [self performSegueWithIdentifier:@"toDRHistoryViewController" sender:history];
@@ -55,7 +57,8 @@
                                  preferredStyle:UIAlertControllerStyleActionSheet];
     
     // iPad 要用 POPOver 才能顯示 ActionSheet, 不然會 Crash.
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
         UIPopoverPresentationController *pop = [alert popoverPresentationController];
         pop.sourceView = self.view;
         
@@ -74,21 +77,24 @@
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     
-    UIAlertAction *addToBookmarks = [UIAlertAction actionWithTitle:@"加入書籤"
-                                                             style:UIAlertActionStyleDefault
-                                                           handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *addToBookmarks =
+    [UIAlertAction actionWithTitle:@"加入書籤"
+                             style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * _Nonnull action) {
         [self __addToBookmarks];
     }];
     
-    UIAlertAction *cleanWebCache = [UIAlertAction actionWithTitle:@"清除網頁快取"
-                                                         style:UIAlertActionStyleDefault
-                                                       handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cleanWebCache =
+    [UIAlertAction actionWithTitle:@"清除網頁快取"
+                             style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * _Nonnull action) {
         [self __cleanWebCache];
     }];
     
-    UIAlertAction *cleanWatchHistory = [UIAlertAction actionWithTitle:@"清除觀看紀錄"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cleanWatchHistory =
+    [UIAlertAction actionWithTitle:@"清除觀看紀錄"
+                             style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * _Nonnull action) {
         [self __cleanWatchHistory];
     }];
     
@@ -102,39 +108,31 @@
 #pragma mark - Private
 - (void)__addToBookmarks
 {
-    if(!self.webView.title.length || !self.webView.URL) {
+    if(!self.webView.title.length || !self.webView.URL)
+    {
         return;
-    }
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSArray *temp               = [userDefault objectForKey:@"bookmarks"];
-    NSMutableArray *bookmarks   = [temp mutableCopy];
-    
-    if(!bookmarks) {
-        bookmarks = [NSMutableArray array];
     }
     
     NSString *title       = self.webView.title;
     NSString *urlString   = self.webView.URL.absoluteString;
-    NSDictionary *webSite = @{@"title" : title,
-                              @"url"   : urlString};
+    NSDictionary *webSite = @{@"title" : title, @"url"   : urlString};
     
-    [bookmarks addObject:webSite];
-    [userDefault setObject:bookmarks forKey:@"bookmarks"];
-    [userDefault synchronize];
+    [self.bookmarks addObject:webSite];
+    [[NSUserDefaults standardUserDefaults]setObject:self.bookmarks forKey:@"bookmarks"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     
     NSString *message = [NSString stringWithFormat:@"已將 %@ 加入書籤", title];
     
     UIAlertController *alert =
-    [UIAlertController alertControllerWithTitle:@"Succeed"
+    [UIAlertController alertControllerWithTitle:@"加入書籤"
                                         message:message
                                  preferredStyle:UIAlertControllerStyleAlert];
     
-    [self presentViewController:alert animated:YES completion:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [alert dismissViewControllerAnimated:YES completion:nil];
-        });
-    }];
+    UIAlertAction *OK =
+    [UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:OK];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)__cleanWebCache

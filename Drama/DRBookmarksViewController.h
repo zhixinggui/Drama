@@ -29,7 +29,7 @@
 
 
 /**
- *  書籤列表
+ *  書籤列表.
  */
 @interface DRBookmarksViewController : UITableViewController
 
@@ -37,6 +37,11 @@
 ///-----------------------------------------------------------------------------
 /// @name Properties
 ///-----------------------------------------------------------------------------
+
+/**
+ *  書籤.
+ */
+@property (nonatomic, weak) NSMutableArray *bookmarks;
 
 /**
  *  DRBookmarksViewControllerDelegate 的 delegation.

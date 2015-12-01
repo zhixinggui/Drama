@@ -9,23 +9,23 @@
 
 @implementation UIViewController (Rotation)
 
-#pragma mark - Rotate
+#pragma mark - UIViewController
 - (BOOL)shouldAutorotate
 {
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    id mvc = self.childViewControllers.lastObject;
+    id mvc    = self.childViewControllers.lastObject;
+    BOOL iPad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
     
-    if([mvc isKindOfClass:[AVPlayerViewController class]] ||
-        UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if([mvc isKindOfClass:[AVPlayerViewController class]] || iPad)
+    {
         return UIInterfaceOrientationMaskAll;
     }
     
     return UIInterfaceOrientationMaskPortrait;
-    
 }
 
 @end

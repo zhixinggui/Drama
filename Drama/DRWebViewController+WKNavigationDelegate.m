@@ -3,6 +3,7 @@
 // Created By Shinren Pan <shinnren.pan@gmail.com> on 2015/11/21.
 // Copyright (c) 2015年 Shinren Pan. All rights reserved.
 
+#import "NSObject+Utility.h"
 #import "DRWebViewController+WKNavigationDelegate.h"
 
 
@@ -10,20 +11,24 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    if(!self.watchHistory.count) {
-        return;
+    NSArray *bookmarksURL = [self.bookmarks valueForKey:@"url"];
+    
+    NSMutableArray *shouldHighlightLinks = ^{
+        NSMutableArray *temp = [@[] mutableCopy];
+        [temp addObjectsFromArray:bookmarksURL];
+        [temp addObjectsFromArray:self.watchHistory];
+        
+        return temp;
+    }();
+    
+    NSString *JSONArray = [NSObject utility_jsonStringFromNSArray:shouldHighlightLinks];
+    
+    if(JSONArray.length)
+    {
+        NSString *javaScript = [NSString stringWithFormat:self.linksHighlight, JSONArray];
+        
+        [webView evaluateJavaScript:javaScript completionHandler:nil];
     }
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.watchHistory
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:nil];
-    
-    NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSString *filePath   = [[NSBundle mainBundle]pathForResource:@"HistoryCheck" ofType:@"js"];
-    NSString *file       = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSString *javaScript = [NSString stringWithFormat:file,jsonString];
-    
-    [webView evaluateJavaScript:javaScript completionHandler:nil];
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation
@@ -31,7 +36,8 @@
 {
     NSURL *failURL = error.userInfo[@"NSErrorFailingURLKey"];
     
-    if(!failURL) {
+    if(!failURL)
+    {
         return;
     }
     
